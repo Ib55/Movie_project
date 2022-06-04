@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Alhamdorilla</h1>
+
+{% for m in movies %}
+<h3>{{m.name}}</h3>
+
+<a href="{% url 'oneMovie' m.id %}"><img src={{m.image.url}}></a>
+{% endfor %}
+
+
+{% endblock content %}

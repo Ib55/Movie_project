@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Movie Name: {{one_movie.name}}</h1>
+<h1>Movie Relice Date: {{date}}</h1>
+
+{% for actor in one_movie.actor.all %}
+<h1>Actor Name: {{actor.name}}</h1>
+<a href="{% url 'oneActor' actor.id %}"><img src="{{actor.image.url}}" width='600'></a>
+{% endfor %}
+
+{% for director in one_movie.director.all %}
+<h1>Director Name: {{director.name}}</h1>
+<a href="{% url 'oneDirector' director.id %}"><img src="{{director.image.url}}" width='600'></a>
+{% endfor %}
+{% endblock content %}
